@@ -21,4 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/docs',function(){
+    $path = base_path('public/dist/index.html');
+    return view($path);
+});
+
 require __DIR__.'/auth.php';

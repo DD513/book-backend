@@ -44,6 +44,15 @@
                         </g>
                     </svg>
                 </div>
+                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0 text-gray-600">
+                    <ul>
+                    <li><a href="book">來這邊是我的圖書館</a></li>
+                        <li><a href="select.php">SELECT，查詢列出資料庫的資料</a></li>
+                        <li><a href="insert.php">INSERT，新增資料到資料表</a></li>
+                        <li><a href="update.php">UPDATE，更新資料表中的資料</a></li>
+                        <li><a href="delete.php">DELETE，刪除資料表中的資料</a></li>
+                     </ul>
+                </div>
 
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
