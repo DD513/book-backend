@@ -21,5 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/book', [BookController::class, 'getBook']);
-Route::post('/book', [BookController::class,'postBook']);
+Route::post('/book', [BookController::class,'createBook']);
+Route::patch('/book/{id}', [BookController::class, 'editBook']);
+Route::delete('/book/{id}', [BookController::class, 'deleteBook']);
+Route::post('/thisbook', [BookController::class, 'findThisBook']);
 Route::get('/doc', [APIDocsController::class, 'getJSON']);
