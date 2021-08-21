@@ -22,8 +22,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/docs',function(){
-    $path = base_path('public/dist/index.html');
-    return view($path);
+    $path = public_path('dist/index.html');
+    return File::get($path);
+    // return view('swagger');
 });
 
 require __DIR__.'/auth.php';
