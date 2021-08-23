@@ -29,7 +29,7 @@ class BookController extends Controller
     public function createBook(Request $request)
     {      
         $createbook = $this->book->createBook($request);
-        return !$createbook ? '新增失敗' : '新增成功';
+        return !$createbook ? '新增失敗' : array('新增成功', $createbook);
     }
 
     /**
