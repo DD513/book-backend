@@ -1,0 +1,228 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "L5 OpenApi",
+        "description": "L5 Swagger OpenApi description",
+        "contact": {
+            "email": "developer@example.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/book": {
+            "get": {
+                "tags": [
+                    "book Tag"
+                ],
+                "summary": "取得全部書籍 Summary",
+                "description": "取得全部書籍 Description",
+                "operationId": "getbook",
+                "responses": {
+                    "200": {
+                        "description": "請求成功"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "book Tag"
+                ],
+                "summary": "新增書籍",
+                "description": "新增書籍",
+                "operationId": "createbook",
+                "parameters": [
+                    {
+                        "name": "ISBN",
+                        "in": "query",
+                        "description": "最多十三碼",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "書名",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "作者",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cover",
+                        "in": "query",
+                        "description": "封面",
+                        "required": true,
+                        "schema": {
+                            "type": "path"
+                        }
+                    },
+                    {
+                        "name": "abstract",
+                        "in": "query",
+                        "description": "描述",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "資源成功建立"
+                    },
+                    "400": {
+                        "description": "請求格式錯誤"
+                    }
+                }
+            }
+        },
+        "/api/book/{id}": {
+            "delete": {
+                "tags": [
+                    "book Tag"
+                ],
+                "summary": "刪除文章",
+                "description": "刪除文章",
+                "operationId": "DeleteBook",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Book id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "請求成功"
+                    },
+                    "404": {
+                        "description": "資源不存在"
+                    }
+                }
+            },
+            "patch": {
+                "tags": [
+                    "book Tag"
+                ],
+                "summary": "修改書籍資訊",
+                "description": "修改書籍資訊",
+                "operationId": "patchbook",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Book id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "ISBN",
+                        "in": "query",
+                        "description": "最多十三碼",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "書名",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "作者",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cover",
+                        "in": "query",
+                        "description": "封面",
+                        "required": true,
+                        "schema": {
+                            "type": "path"
+                        }
+                    },
+                    {
+                        "name": "abstract",
+                        "in": "query",
+                        "description": "描述",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "資源成功建立"
+                    },
+                    "400": {
+                        "description": "請求格式錯誤"
+                    }
+                }
+            }
+        },
+        "/api/thisbook": {
+            "post": {
+                "tags": [
+                    "book Tag"
+                ],
+                "summary": "查詢單一書籍",
+                "description": "查詢單一書籍",
+                "operationId": "findbook",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "書名",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "資源成功建立"
+                    },
+                    "400": {
+                        "description": "請求格式錯誤"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
