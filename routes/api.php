@@ -25,3 +25,5 @@ Route::post('/book', [BookController::class,'createBook']);
 Route::patch('/book/{id}', [BookController::class, 'editBook']);
 Route::delete('/book/{id}', [BookController::class, 'deleteBook']);
 Route::post('/thisbook', [BookController::class, 'findThisBook']);
+Route::get('/book/{id}', [BookController::class, 'getAssignBook']);
+

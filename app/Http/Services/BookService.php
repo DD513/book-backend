@@ -47,4 +47,8 @@ class BookService {
     return $find;
   }
 
+  public function getAssignBook($id) {
+    $books = book::where('id','=',$id)->first();
+    return $books;
+  }
 }

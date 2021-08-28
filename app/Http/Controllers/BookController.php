@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\book;
 use Illuminate\Http\Request;
 use App\Http\Services\BookService;
 
@@ -66,5 +67,9 @@ class BookController extends Controller
     {
         $findbook = $this->book->findThisBook($request);
         return !$findbook ? '沒有這本書' : $findbook;
+    }
+
+    public function getAssignBook($id) {
+        return $this->book->getAssignBook($id);
     }
 }
