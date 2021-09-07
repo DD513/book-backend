@@ -1,9 +1,13 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: *");
+header("Access-Control-Allow-Headers: Origin, Methods, Content-Type");
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\APIDocsController;
+
+
 
 /*
 |--------------------------------------------------------------------------
